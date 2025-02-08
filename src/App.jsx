@@ -2,6 +2,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { IoSearch } from "react-icons/io5";
 import { LiaWindSolid } from "react-icons/lia";
 import { WiHumidity } from "react-icons/wi";
+import { WiMoonFull } from "react-icons/wi"; // <WiMoonFull /> 01
+import { WiDayFog } from "react-icons/wi";  // <WiDayFog />
+import { WiCloudy } from "react-icons/wi";
+import { WiCloud } from "react-icons/wi";
+import { WiDayShowers } from "react-icons/wi";
+import { WiDaySleet } from "react-icons/wi";
+import { WiNightAltLightning } from "react-icons/wi";
+import { FaRegSnowflake } from "react-icons/fa6";
+
 
 const App = () => {
   const [time, setTime] = useState(new Date());
@@ -54,22 +63,22 @@ const App = () => {
 
   // allicons
   const allIcons = {
-    "01d": "src/assets/images/01d.png",
-    "01n": "src/assets/images/01n.png",
-    "02d": "src/assets/images/02d.png",
-    "02n": "src/assets/images/02n.png",
-    "03d": "src/assets/images/03d.png",
-    "03n": "src/assets/images/03n.png",
-    "04d": "src/assets/images/04d.png",
-    "04n": "src/assets/images/04n.png",
-    "09d": "src/assets/images/09d.png",
-    "09n": "src/assets/images/09n.png",
-    "10d": "src/assets/images/10d.png",
-    "10n": "src/assets/images/10n.png",
-    "11d": "src/assets/images/11d.png",
-    "11n": "src/assets/images/11n.png",
-    "13d": "src/assets/images/13d.png",
-    "13n": "src/assets/images/13n.png",
+    "01d": <WiMoonFull className="text-orange-500"/>,
+    "01n": <WiMoonFull className="text-gray-500"/>,
+    "02d": <WiDayFog className="text-orange-500"/>,
+    "02n": <WiDayFog className="text-gray-500"/>,
+    "03d": <WiCloud />,
+    "03n": <WiCloud />,
+    "04d": <WiCloudy />,
+    "04n": <WiCloudy />,
+    "09d": <WiDayShowers />,
+    "09n": <WiDayShowers />,
+    "10d": <WiDaySleet />,
+    "10n": <WiDaySleet />,
+    "11d": <WiNightAltLightning />,
+    "11n": <WiNightAltLightning />,
+    "13d": <FaRegSnowflake />,
+    "13n": <FaRegSnowflake />,
   };
 
   // dateTime function
@@ -114,7 +123,7 @@ const App = () => {
             <>
               {/* showing icon - temp - location  */}
               <div>
-                <img src={weatherData.icon} className="w-52 mx-auto" />
+                <h2 className="text-[12rem] mx-15">{weatherData.icon}</h2>
                 <h1 className="text-center font-bold text-gray-400 text-4xl">
                   {weatherData.temp}°C
                 </h1>
